@@ -22,6 +22,8 @@ fn main() {
             .long("a-casa-loro")
             .help("similar to mv, but with a lot of racism inside it")
             .takes_value(true)
+            .min_values(2)
+            .max_values(2)
        )
        .arg(
            Arg::with_name("pieni-poteri")
