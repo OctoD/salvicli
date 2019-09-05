@@ -4,8 +4,10 @@ use clap::{
     Arg
 };
 
+mod commands;
+
 fn main() {
-    App::new("salvicli")
+    let matches = App::new("salvicli")
        .version("1.0")
        .about("Prima l'Itaglia e gli Itagliani!")
        .arg(
@@ -30,4 +32,16 @@ fn main() {
        )
        .author("Paolo R.")
        .get_matches(); 
+
+    if let Some(args) = matches.values_of("ruspa") {
+        commands::ruspa::run(args);
+    }
+
+    if let Some(args) = matches.values_of("a-casa-loro") {
+        commands::a_casa_loro::run(args);
+    }
+
+    if let Some(args) = matches.values_of("pieni-poteri") {
+        commands::pieni_poteri::run(args);
+    }
 }
