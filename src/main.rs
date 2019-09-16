@@ -25,13 +25,6 @@ fn main() {
             .min_values(2)
             .max_values(2)
        )
-       .arg(
-           Arg::with_name("pieni-poteri")
-            .short("cmildvce")
-            .long("pieni-poteri")
-            .help("just a sudo, but in a crappy fascist")
-            .takes_value(true)
-       )
        .author("Paolo R.")
        .get_matches(); 
 
@@ -40,10 +33,6 @@ fn main() {
     }
 
     if let Some(args) = matches.values_of("a-casa-loro") {
-        commands::a_casa_loro::run(args);
-    }
-
-    if let Some(args) = matches.values_of("pieni-poteri") {
-        commands::pieni_poteri::run(args);
+        let _result = commands::a_casa_loro::run(args);
     }
 }

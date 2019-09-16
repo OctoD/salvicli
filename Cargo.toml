@@ -1,5 +1,5 @@
 [package]
-name = "salvicli"
+name = "salvini"
 version = "0.1.0"
 authors = ["Paolo Roth <iamoctod@gmail.com>"]
 edition = "2018"
